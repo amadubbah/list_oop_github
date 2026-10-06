@@ -1,19 +1,55 @@
-# Patient Class
-class patient:
-    def__init__(self, name, patient_id, age, gender, diagnosis):
-    self.name = name
-    self.patient_id = patient_id
-    self.age = age
-    self.gender = gender
-    self.diagnosis = diagnosis
+# Patient Class 
+class Patient:
+    def __init__(self, Patient_ID, name, age, gender, diagnosis):
+        self.name = name
+        self.Patient_ID = Patient_ID
+        self.age = age
+        self.gender = gender
+        self.diagnosis = diagnosis
 
-def display_info(self):
-   print("/n***** Patient Information *****")
-   print(f"ID: {self.patient_id}")
-   print(f"Name: {self.name})")
-   print(f"age: {self.age})")
-   print(f"gender: {self.gender})")
-   print(f"name: {self.diagnosis})")
+    def display_info(self):
+        print("\n**** Patient Information ****")
+        print(f"Name: {self.name}")
+        print(f"Patient ID: {self.Patient_ID}")
+        print(f"Age: {self.age}")
+        print(f"Gender: {self.gender}")
+        print(f"Diagnosis: {self.diagnosis}")
 
+# Hospital Class
+class Hospital:
+    def __init__(self, hospital_name):
+        self.hospital_name = hospital_name
+        
+        self.patients = []
 
+    def add_patient(self, patient):
+        self.patients.append(patient)
+        print("Patient added successfully")
+
+    def display_patients(self):
+        print("\n**** All Patients ****")
+        print(f"\n**** Patients in {self.hospital_name} ****")
+
+        # check if there are any patients
+        if len(self.patients) == 0:
+            print("No patients found.")
+        else:
+            for patient in self.patients:
+                patient.display_info()
+
+# Patient objects
+patient1 = Patient("John Doe",101, 23, "Male", "Flu")
+patient2 = Patient(" Jane Smith",102, 28, "Female", "Cold")
+patient3 = Patient("Michael Johnson",103, 42, "Male", "Diabetes")
+
+# Hospital objects
+hospital = Hospital("Donal  d Clinic")
+
+#Add patients to the hospital using the add_patient method 
+hospital.add_patient(patient1)
+hospital.add_patient(patient2)
+hospital.add_patient(patient3)
+
+#Display all patients record in the hospital
+hospital.display_patients()
 

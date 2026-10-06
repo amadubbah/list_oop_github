@@ -31,6 +31,6 @@ fruits.remove("Mango")
 
 students.pop()
 students.pop()
-thirdItem = student.pop()
+thirdItem = students.pop()
 print(students)
 print(thirdItem)
